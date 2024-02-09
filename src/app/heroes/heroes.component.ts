@@ -18,4 +18,10 @@ import { HEROES } from '../mock-heroes';
 export class HeroesComponent {
   
   heroes:Hero[] = HEROES
+
+  selectedHero?:Hero
+
+  onSelect(hero:Hero) {
+    this.selectedHero = hero
+  }
 }
