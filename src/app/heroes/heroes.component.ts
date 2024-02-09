@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HEROES } from '../mock-heroes';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../hero.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-heroes',
@@ -21,7 +22,10 @@ import { HeroService } from '../hero.service';
 })
 export class HeroesComponent implements OnInit {
 
-  constructor(private heroService:HeroService) {}
+  constructor(
+    private heroService:HeroService,
+    private messageService:MessageService
+    ) {}
   
   heroes:Hero[] = []
 
@@ -34,7 +38,8 @@ export class HeroesComponent implements OnInit {
   selectedHero?:Hero
 
   onSelect(hero:Hero) {
-    this.selectedHero = hero
+    this.selectedHero = hero;
+    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`)
   }
 
   ngOnInit(): void {
