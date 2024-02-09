@@ -3,10 +3,12 @@ import {bootstrapApplication, provideProtractorTestingSupport} from '@angular/pl
 import {AppComponent} from './app/app.component';
 import { provideRouter } from '@angular/router';
 import { routes } from './app/routes';
+import { importProvidersFrom } from '@angular/core';
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideProtractorTestingSupport(),
+    importProvidersFrom(),
     provideRouter(routes)
   ],
 });
