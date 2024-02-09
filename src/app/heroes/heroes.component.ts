@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Hero } from '../hero';
-import { NgFor, UpperCasePipe } from '@angular/common';
+import { NgFor, NgIf, UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HEROES } from '../mock-heroes';
 
@@ -10,7 +10,8 @@ import { HEROES } from '../mock-heroes';
   imports: [
     UpperCasePipe,
     FormsModule,
-    NgFor
+    NgFor,
+    NgIf
   ],
   templateUrl: './heroes.component.html',
   styleUrl: './heroes.component.css'
